@@ -9,9 +9,9 @@ import retrofit2.http.Query
 interface ApiService {
 
     @GET("/weather/location")
-    fun getLocation(): Observable<LocationItem>
+    suspend fun getLocation(): LocationItem
 
     @GET("/weather/forecast")
-    fun getForecast(@Query("url") url: String): Observable<ForecastResponse>
+    suspend fun getForecast(@Query("url") url: String): ForecastResponse
 
 }
