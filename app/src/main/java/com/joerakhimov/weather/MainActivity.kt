@@ -19,8 +19,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initObservers() {
+
+        viewModel.location.observe(this) {
+            title = it.name
+        }
+
         viewModel.forecastResponse.observe(this) {
-            text_location.text = it.location?.name
             text_current_temp.text = "${it.current?.tempC}°"
             text_current_condition.text = it.current?.condition?.text
             it.forecast?.forecastday?.let { forecast ->
@@ -28,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 recycler_forecast.adapter = ForecastAdapter(forecast)
             }
         }
+
     }
 
 }
