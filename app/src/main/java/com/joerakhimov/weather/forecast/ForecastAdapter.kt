@@ -1,11 +1,10 @@
-package com.joerakhimov.weather
+package com.joerakhimov.weather.forecast
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.joerakhimov.weather.model.ForecastdayItem
+import com.joerakhimov.weather.R
 import kotlinx.android.synthetic.main.listitem_forecast.view.*
 
 class ForecastAdapter(private val forecast: List<ForecastdayItem>) :

@@ -1,16 +1,17 @@
-package com.joerakhimov.weather.model
+package com.joerakhimov.weather.forecast
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ForecastResponse(
 
-	@field:SerializedName("current")
+    @field:SerializedName("current")
 	val current: Current? = null,
 
-	@field:SerializedName("location")
+    @field:SerializedName("location")
 	val location: LocationItem? = null,
 
-	@field:SerializedName("forecast")
+    @field:SerializedName("forecast")
 	val forecast: Forecast? = null
 
 )
@@ -28,20 +29,21 @@ data class LocationItem(
 
 	@field:SerializedName("url")
 	val url: String? = null
-)
+
+): Serializable
 
 data class ForecastdayItem(
 
-	@field:SerializedName("date")
+    @field:SerializedName("date")
 	val date: String? = null,
 
-	@field:SerializedName("condition")
+    @field:SerializedName("condition")
 	val condition: Condition? = null,
 
-	@field:SerializedName("maxtemp_c")
+    @field:SerializedName("maxtemp_c")
 	val maxtempC: Double? = null,
 
-	@field:SerializedName("mintemp_c")
+    @field:SerializedName("mintemp_c")
 	val mintempC: Double? = null
 )
 
@@ -51,10 +53,10 @@ data class Forecast(
 )
 
 data class Current(
-	@field:SerializedName("condition")
+    @field:SerializedName("condition")
 	val condition: Condition? = null,
 
-	@field:SerializedName("temp_c")
+    @field:SerializedName("temp_c")
 	val tempC: Double? = null
 )
 
